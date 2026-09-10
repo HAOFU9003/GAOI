@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAOI</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --ground: #f6f7f8;
+  --panel: #ffffff;
+  --panel-2: #f0f2f4;
+  --ink: #12161a;
+  --ink-2: #525c66;
+  --ink-3: #767f89;
+  --rule: #dee2e7;
+  --rule-strong: #c4ccd3;
+  --accent: #2a78d6;
+  --shadow: 0 1px 2px rgba(18,22,26,.06), 0 8px 24px rgba(18,22,26,.05);
+  --shadow-lift: 0 2px 4px rgba(18,22,26,.08), 0 14px 32px rgba(18,22,26,.10);
+  --f-disp: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #16191c;
+    --panel: #1d2126;
+    --panel-2: #24292f;
+    --ink: #f1f3f5;
+    --ink-2: #a6afb8;
+    --ink-3: #7c858e;
+    --rule: #2c3238;
+    --rule-strong: #3d454d;
+    --accent: #3987e5;
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.28);
+    --shadow-lift: 0 2px 4px rgba(0,0,0,.40), 0 14px 32px rgba(0,0,0,.34);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #16191c;
+  --panel: #1d2126;
+  --panel-2: #24292f;
+  --ink: #f1f3f5;
+  --ink-2: #a6afb8;
+  --ink-3: #7c858e;
+  --rule: #2c3238;
+  --rule-strong: #3d454d;
+  --accent: #3987e5;
+  --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.28);
+  --shadow-lift: 0 2px 4px rgba(0,0,0,.40), 0 14px 32px rgba(0,0,0,.34);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-inline: 24px;
+  padding-block: 64px 96px;
+}
+
+header { border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 8px; }
+.mark {
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: clamp(40px, 9vw, 58px);
+  letter-spacing: .04em;
+  line-height: 1;
+  margin: 0;
+}
+.tagline {
+  margin: 12px 0 0;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.count {
+  margin: 18px 0 0;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.feed { list-style: none; margin: 0; padding: 0; }
+.year {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: var(--ink-3);
+  padding: 36px 0 12px;
+}
+.entry { margin-top: 20px; }
+
+.card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 24px;
+  padding: 22px 24px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow .16s ease, border-color .16s ease, transform .16s ease;
+}
+.card:hover {
+  border-color: var(--rule-strong);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-1px);
+}
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.when { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink-3); padding-top: 4px; }
+.when .d { display: block; color: var(--ink-2); font-weight: 500; }
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+.card h2 {
+  font-family: var(--f-disp);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
+.summary { margin: 8px 0 0; color: var(--ink-2); font-size: 14.5px; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; padding: 0; }
+.tags li {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .02em;
+  color: var(--ink-3);
+  background: var(--panel-2);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+.empty {
+  margin-top: 32px;
+  padding: 32px 24px;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 10px;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: space-between;
+}
+footer a { color: var(--ink-3); }
+
+@media (max-width: 640px) {
+  .wrap { padding-block: 44px 64px; }
+  .card { grid-template-columns: 1fr; gap: 10px; padding: 20px; }
+  .when { padding-top: 0; }
+  .when .d { display: inline; }
+  .card h2 { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 class="mark">GAOI</h1>
+    <p class="tagline">Weekly experiment reports · Hao Fu</p>
+    <p class="count">1 report · latest Sep 9, 2026</p>
+  </header>
+  <ol class="feed">
+  <li class="year" aria-hidden="true">2026</li>
+  <li class="entry">
+    <a class="card" href="reports/2026-09-09-knee-rope-backpack.html">
+      <div class="when"><span class="d">Sep 9</span>2026</div>
+      <div class="body">
+        <p class="eyebrow">Real-world RL · MuJoCo as the real world</p>
+        <h2>Knee, Rope, Backpack</h2>
+        <p class="summary">Three physical changes to a Booster T1, each absorbed by resuming the frozen flow policy&#x27;s noise prior on data collected outside IsaacSim. From 0/10 episodes at the start to 9–10/10 on all three tasks after 24 rounds (≈ 3.5 h).</p>
+        <ul class="tags"><li>Booster T1</li><li>flow policy</li><li>noise prior</li><li>MuJoCo</li></ul>
+      </div>
+    </a>
+  </li>
+  </ol>
+  <footer>
+    <span>Generated from reports.json by tools/build_index.py</span>
+    <a href="https://github.com/HAOFU9003/GAOI">github.com/HAOFU9003/GAOI</a>
+  </footer>
+</div>
+</body>
+</html>

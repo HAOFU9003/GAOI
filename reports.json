@@ -1,0 +1,21 @@
+{
+  "site": {
+    "title": "GAOI",
+    "tagline": "Weekly experiment reports · Hao Fu"
+  },
+  "reports": [
+    {
+      "file": "reports/2026-09-09-knee-rope-backpack.html",
+      "date": "2026-09-09",
+      "title": "Knee, Rope, Backpack",
+      "eyebrow": "Real-world RL · MuJoCo as the real world",
+      "summary": "Three physical changes to a Booster T1, each absorbed by resuming the frozen flow policy's noise prior on data collected outside IsaacSim. From 0/10 episodes at the start to 9–10/10 on all three tasks after 24 rounds (≈ 3.5 h).",
+      "tags": [
+        "Booster T1",
+        "flow policy",
+        "noise prior",
+        "MuJoCo"
+      ]
+    }
+  ]
+}
