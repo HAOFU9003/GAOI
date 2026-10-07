@@ -30,6 +30,19 @@
         "continual learning",
         "MuJoCo"
       ]
+    },
+    {
+      "file": "reports/2026-10-06-trained-in-2-d-played-in-isaac.html",
+      "date": "2026-10-06",
+      "title": "Trained in 2-D, Played in Isaac",
+      "eyebrow": "Multi-robot soccer · 3 v 3 Booster T1",
+      "summary": "A 3 v 3 T1 soccer policy trained only in a 2-D world fitted to Isaac data, played zero-shot in Isaac Lab. Against three unseen behaviour trees it wins 0.57 of games in 2-D but 0.36 in Isaac; replays of both worlds side by side.",
+      "tags": [
+        "Booster T1",
+        "multi-agent RL",
+        "self-play",
+        "Isaac Lab"
+      ]
     }
   ]
 }
