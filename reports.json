@@ -16,6 +16,20 @@
         "noise prior",
         "MuJoCo"
       ]
+    },
+    {
+      "file": "reports/2026-10-06-eight-conditions-nothing-forgotten.html",
+      "date": "2026-10-06",
+      "title": "Eight Conditions, Nothing Forgotten",
+      "eyebrow": "Continual RL · MuJoCo as the real world",
+      "summary": "One steering policy over a frozen flow policy learns 8 body and terrain conditions in a row, without labels. Plain fine-tuning ends at 0.29 mean survival over all 8; with a KL anchor to the previous steering policy, 0.86–0.88.",
+      "tags": [
+        "Booster T1",
+        "flow policy",
+        "noise steering",
+        "continual learning",
+        "MuJoCo"
+      ]
     }
   ]
 }
