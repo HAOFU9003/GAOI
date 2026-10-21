@@ -43,6 +43,20 @@
         "self-play",
         "Isaac Lab"
       ]
+    },
+    {
+      "file": "reports/2026-10-21-trained-in-a-world-model-played-in-isaac.html",
+      "date": "2026-10-21",
+      "title": "Trained in a World Model, Played in Isaac",
+      "eyebrow": "Multi-robot soccer · 3 v 3 Booster T1",
+      "summary": "A 3 v 3 T1 soccer policy trained only inside a learned world model of Isaac, played zero-shot in Isaac and in 2-D. Against three unseen behaviour trees its net score (win − loss) is +0.58 in both worlds, against +0.33 for the best 2-D-trained policy in Isaac; replays of both worlds side by side.",
+      "tags": [
+        "Booster T1",
+        "multi-agent RL",
+        "self-play",
+        "world model",
+        "Isaac Lab"
+      ]
     }
   ]
 }
