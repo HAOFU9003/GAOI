@@ -57,6 +57,19 @@
         "world model",
         "Isaac Lab"
       ]
+    },
+    {
+      "file": "reports/2026-10-21-one-tracker-for-walk-run-getup-and-kick.html",
+      "date": "2026-10-21",
+      "title": "One Tracker for Walk, Run, Getup and Kick",
+      "eyebrow": "Newton skills · Booster T1 motion tracking",
+      "summary": "A single tracking policy trained in Newton on 150 clips (walk, run, getup, kick), two clips per motion, next to the kick-only tracker on four shots with the ball.",
+      "tags": [
+        "Booster T1",
+        "motion tracking",
+        "Newton",
+        "Isaac Lab"
+      ]
     }
   ]
 }
