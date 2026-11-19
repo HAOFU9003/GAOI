@@ -70,6 +70,20 @@
         "Newton",
         "Isaac Lab"
       ]
+    },
+    {
+      "file": "reports/2026-11-19-t2-soccer-skills.html",
+      "date": "2026-11-19",
+      "title": "T2 Soccer Skills",
+      "eyebrow": "Humanoid soccer skills · Booster T2",
+      "summary": "Six soccer skills on one frozen base model, simulation and real robot side by side: walk, receive, dribble, pass, kick, strong kick.",
+      "tags": [
+        "Booster T2",
+        "FB-CPR",
+        "behaviour foundation model",
+        "soccer skills",
+        "sim2real"
+      ]
     }
   ]
 }
